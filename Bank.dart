@@ -14,8 +14,8 @@ set balance(double balance) => this._balance = balance ;
 
 
 
-void  desposit(double amount)  => print("ฝากเงิน ${amount} บาท ยอดเงินคงเหลือ ${balance += amount} บาท");
-void withdraw(double amount) => print("ถอนเงิน ${amount} บาท ยอดเงินคงเหลือ ${balance -= amount} บาท") ;
+void  desposit(double amount)  => print("ชื่อ ${name} : ฝากเงิน ${amount} บาท ยอดเงินคงเหลือ ${balance += amount} บาท");
+void withdraw(double amount) => print("ชื่อ ${name} : ถอนเงิน ${amount} บาท ยอดเงินคงเหลือ ${balance -= amount} บาท") ;
 void Showbalance() => print("เงินฝากทั้งหมด = $balance บาท") ;
 
 }
@@ -29,7 +29,7 @@ class SavingAccount extends BankAccount{
 
   void addinterest(double interestRate){
     balance = (balance *interestRate / 100) + balance;
-    print('ดอกเบี้ย : $interestRate ยอดคงเหลือ : $balance');
+    print('ชื่อ ${name} : ดอกเบี้ย : $interestRate ยอดเงินคงเหลือ $balance บาท');
     }
 
 
@@ -37,7 +37,7 @@ class SavingAccount extends BankAccount{
 void main(List<String> args) {
   //var bankAccount = BankAccount("film",1000);
   
-  var savingAccount = SavingAccount("film", 2000.0, 0);
+  var savingAccount = SavingAccount("Film", 2000.0, 0);
   savingAccount.desposit(400);
   savingAccount.Showbalance();
   savingAccount.withdraw(100);
